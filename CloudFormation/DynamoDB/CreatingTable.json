@@ -1,0 +1,49 @@
+{
+    "Resources": {
+        "ExampleTable": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "TableName": "ExampleTable",
+                "BillingMode": "PROVISIONED",
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 1,
+                    "WriteCapacityUnits": 1
+                },
+                "Tags": [
+                    {
+                        "Key": "Just4ForKey",
+                        "Value": "Just4FunValue"
+                    },
+                    {
+                        "Key": "Just4ForKey2",
+                        "Value": "Just4FunValue2"
+                    }
+                ],
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "PartitionKey",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "SortingKey",
+                        "AttributeType": "N"
+                    }
+                ],
+                "KeySchema": [
+                    {
+                        "AttributeName": "PartitionKey",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "SortingKey",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "TimeToLiveSpecification": {
+                    "AttributeName": "TimeToLive",
+                    "Enabled": true
+                }
+            }
+        }
+    }
+}
