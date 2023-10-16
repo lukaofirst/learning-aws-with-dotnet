@@ -1,0 +1,19 @@
+{
+    "Resources": {
+        "ExampleQueue": {
+            "Type": "AWS::SQS::Queue",
+            "Properties": {
+                "QueueName": "ExampleQueue",
+                "ContentBasedDeduplication": true,
+                "FifoQueue": true,
+                "VisibilityTimeout": 30,
+                "Tags": [
+                    {
+                        "Key": "ExampleQueueTagKey",
+                        "Value": "ExampleQueueTagValue"
+                    }
+                ]
+            }
+        }
+    }
+}
