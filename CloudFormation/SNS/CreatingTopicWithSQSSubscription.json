@@ -1,0 +1,62 @@
+{
+    "Resources": {
+        "ExampleTopic": {
+            "Type": "AWS::SNS::Topic",
+            "Properties": {
+                "TopicName": "ExampleTopic",
+                "Tags": [
+                    {
+                        "Key": "ExampleTopicTagKey",
+                        "Value": "ExampleTopicTagValue"
+                    }
+                ]
+            }
+        },
+        "ExampleQueue": {
+            "Type": "AWS::SQS::Queue",
+            "Properties": {
+                "QueueName": "ExampleQueue",
+                "Tags": [
+                    {
+                        "Key": "ExampleQueueTagKey",
+                        "Value": "ExampleQueueTagValue"
+                    }
+                ]
+            }
+        },
+        "ExampleQueuePolicy": {
+            "Type": "AWS::SQS::QueuePolicy",
+            "Properties": {
+                "Queues": [{ "Ref": "ExampleQueue" }],
+                "PolicyDocument": {
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": "*",
+                            "Action": ["sqs:SendMessage"],
+                            "Resource": "*",
+                            "Condition": {
+                                "ArnEquals": {
+                                    "aws:SourceArn": { "Ref": "ExampleTopic" }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "SNSSubscription": {
+            "Type": "AWS::SNS::Subscription",
+            "Properties": {
+                "Endpoint": {
+                    "Fn::GetAtt": ["ExampleQueue", "Arn"]
+                },
+                "Protocol": "sqs",
+                "TopicArn": {
+                    "Ref": "ExampleTopic"
+                },
+                "RawMessageDelivery": true
+            }
+        }
+    }
+}
