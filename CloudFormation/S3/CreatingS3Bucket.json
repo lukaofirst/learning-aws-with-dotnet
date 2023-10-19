@@ -1,0 +1,16 @@
+{
+    "Resources": {
+        "ExampleBucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": "example-bucket-name-20232",
+                "Tags": [
+                    {
+                        "Key": "ExampleBucketTagKey",
+                        "Value": "ExampleBucketTagValue"
+                    }
+                ]
+            }
+        }
+    }
+}
