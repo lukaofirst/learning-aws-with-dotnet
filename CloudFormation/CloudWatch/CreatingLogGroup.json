@@ -1,0 +1,16 @@
+{
+    "Resources": {
+        "ExampleCloudWatchLogs": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+                "LogGroupName": "ExampleCloudWatchLogs",
+                "Tags": [
+                    {
+                        "Key": "ExampleLogGroupTagKey",
+                        "Value": "ExampleLogGroupTagValue"
+                    }
+                ]
+            }
+        }
+    }
+}
