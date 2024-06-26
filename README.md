@@ -49,3 +49,11 @@ In this repo, you'll find my hands-on using AWS with .NET, using the following s
     -   Store and retrieve sensive data
     -   Integrate with a PostgreSQL database's using AWS RDS
     -   Setup Secret Manager + Entity Framework Core
+      - 
+<br />
+
+-   **AWS Cognito**
+    -   Creating an user pool 
+    -   Adding email and password on sign up flow
+    -   Receiving the JWT tokens to login the user
+    -   Integrate Cognito with an API
