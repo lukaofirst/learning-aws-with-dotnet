@@ -1,5 +1,8 @@
-<h1 style="text-align:center">Hands-on with AWS + .NET</h1>
-<img src="aws-services.svg" width="100%" height="100px" />
+<div align="center">
+  <h1>Hands-on with AWS + .NET</h1>
+</div>
+
+<img src="aws-dotnet.svg" width="100%" height="100px" />
 
 In this repo, you'll find my hands-on using AWS with .NET, using the following services
 
@@ -45,15 +48,11 @@ In this repo, you'll find my hands-on using AWS with .NET, using the following s
 
 <br />
 
--   **AWS Secret Manager + AWS RDS**
-    -   Store and retrieve sensive data
-    -   Integrate with a PostgreSQL database's using AWS RDS
-    -   Setup Secret Manager + Entity Framework Core
-      - 
-<br />
+-   **AWS Secret Manager + AWS RDS** - Store and retrieve sensive data - Integrate with a PostgreSQL database's using AWS RDS - Setup Secret Manager + Entity Framework Core -
+    <br />
 
 -   **AWS Cognito**
-    -   Creating an user pool 
+    -   Creating an user pool
     -   Adding email and password on sign up flow
     -   Receiving the JWT tokens to login the user
     -   Integrate Cognito with an API
